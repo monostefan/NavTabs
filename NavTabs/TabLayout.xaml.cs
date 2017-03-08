@@ -9,14 +9,14 @@ namespace NavTabs
     {
         public event EventHandler<int> TabChanged;
 
-        private Color inactiveColor = Color.Black;
+        private Color inactiveColor = Color.FromHex("#001155");
         public Color InactiveColor
         {
             get { return inactiveColor; }
             set { inactiveColor = value; }
         }
 
-        private Color activeColor = Color.Blue;
+        private Color activeColor = Color.FromHex("#1781e3");
         public Color ActiveColor
         {
             get { return activeColor; }
