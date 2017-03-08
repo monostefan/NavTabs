@@ -10,7 +10,6 @@
 
 	<BoxView
 		x:Name="activeBox"
-		BackgroundColor="Blue"
 		VerticalOptions="End"
 		Grid.Row="1"
 		Grid.Column="0" />
