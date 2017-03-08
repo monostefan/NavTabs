@@ -10,12 +10,12 @@
         <Grid VerticalOptions="FillAndExpand">
             <ContentView
                 x:Name="view1"
-                BackgroundColor="Fuchsia"
+                BackgroundColor="#fdffff"
                 VerticalOptions="FillAndExpand"
                 HorizontalOptions="FillAndExpand" />
             <ContentView
                 x:Name="view2"
-                BackgroundColor="Lime"
+                BackgroundColor="#fffdff"
                 IsVisible="false"
                 VerticalOptions="FillAndExpand"
                 HorizontalOptions="FillAndExpand" />

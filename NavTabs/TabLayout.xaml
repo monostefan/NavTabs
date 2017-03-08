@@ -11,8 +11,15 @@
     </Grid.RowDefinitions>
 
     <BoxView
-        x:Name="activeBox"
+        x:Name="seperator"
+        BackgroundColor="#DDE3E7"
+        HeightRequest="1"
         VerticalOptions="End"
+        Grid.Row="1"
+        Grid.Column="0" />
+
+    <BoxView
+        x:Name="activeBox"
         Grid.Row="1"
         Grid.Column="0" />
 </Grid>

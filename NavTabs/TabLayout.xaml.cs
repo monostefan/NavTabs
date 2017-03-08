@@ -48,6 +48,7 @@ namespace NavTabs
             var tabLabel = new Label
             {
                 Text = title,
+                FontSize = 17,
                 TextColor = column == 0 ? ActiveColor : InactiveColor,
                 VerticalOptions = LayoutOptions.Fill,
                 VerticalTextAlignment = TextAlignment.Center,
@@ -59,18 +60,23 @@ namespace NavTabs
                 Command = new Command(() => OnTabSelected(column, tabLabel))
             });
 
+            SetColumnSpan(seperator, titles.Count);
+
             Children.Add(tabLabel, column, 0);
         }
 
         public void RemoveTab(string title)
         {
             titles.Remove(title);
+
             var labelsToRemove = Children.OfType<Label>().Where(l => l.Text == title).ToArray();
             foreach (var tabLabel in labelsToRemove)
             {
                 tabLabel.GestureRecognizers.RemoveAt(0);
                 Children.Remove(tabLabel);
             }
+
+            SetColumnSpan(seperator, titles.Count);
         }
 
         private void OnTabSelected(int column, Label selectedLabel)
