@@ -7,21 +7,10 @@ namespace NavTabs
 {
     public partial class TabLayout : Grid
     {
+        private static readonly Color inactiveColor = Color.FromHex("#001155");
+        private static readonly Color activeColor = Color.FromHex("#1781e3");
+
         public event EventHandler<int> TabChanged;
-
-        private Color inactiveColor = Color.FromHex("#001155");
-        public Color InactiveColor
-        {
-            get { return inactiveColor; }
-            set { inactiveColor = value; }
-        }
-
-        private Color activeColor = Color.FromHex("#1781e3");
-        public Color ActiveColor
-        {
-            get { return activeColor; }
-            set { activeBox.BackgroundColor = activeColor = value; }
-        }
 
         private readonly List<string> titles;
 
@@ -36,7 +25,7 @@ namespace NavTabs
 
             InitializeComponent();
 
-            activeBox.BackgroundColor = ActiveColor;
+            activeBox.BackgroundColor = activeColor;
         }
 
         public void AddTab(string title)
@@ -49,7 +38,7 @@ namespace NavTabs
             {
                 Text = title,
                 FontSize = 17,
-                TextColor = column == 0 ? ActiveColor : InactiveColor,
+                TextColor = column == 0 ? activeColor : inactiveColor,
                 VerticalOptions = LayoutOptions.Fill,
                 VerticalTextAlignment = TextAlignment.Center,
                 HorizontalTextAlignment = TextAlignment.Center,
@@ -83,10 +72,10 @@ namespace NavTabs
         {
             foreach (var label in Children.OfType<Label>())
             {
-                label.TextColor = InactiveColor;
+                label.TextColor = inactiveColor;
             }
 
-            selectedLabel.TextColor = ActiveColor;
+            selectedLabel.TextColor = activeColor;
 
             TabChanged?.Invoke(this, column);
 
