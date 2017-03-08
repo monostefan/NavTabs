@@ -49,9 +49,10 @@ namespace NavTabs
 			var tabLabel = new Label
 			{
 				Text = title,
+				TextColor = column == 0 ? ActiveColor : InactiveColor,
+                VerticalOptions = LayoutOptions.Fill,
 				VerticalTextAlignment = TextAlignment.Center,
 				HorizontalTextAlignment = TextAlignment.Center,
-				TextColor = column == 0 ? ActiveColor : InactiveColor
 			};
 
 			tabLabel.GestureRecognizers.Add(new TapGestureRecognizer

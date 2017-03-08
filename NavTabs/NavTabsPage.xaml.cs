@@ -10,8 +10,6 @@ namespace NavTabs
 
 			if (Device.OS == TargetPlatform.iOS)
 				Padding = new Thickness(0, 20, 0, 0);
-			
-			tabLayout.ActiveColor = Color.Red;
 
 			tabLayout.AddTab("Von mir");
 			tabLayout.AddTab("Für mich");

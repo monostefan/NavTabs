@@ -4,10 +4,9 @@
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 	xmlns:local="clr-namespace:NavTabs"
 	x:Class="NavTabs.NavTabsPage">
-	<StackLayout>
+	<StackLayout Spacing="0">
 		<local:TabLayout
-			x:Name="tabLayout"
-			HeightRequest="30" />
+			x:Name="tabLayout" />
 		<Grid VerticalOptions="FillAndExpand">
 			<ContentView
 				x:Name="view1"
