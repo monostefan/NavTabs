@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ContentPage
-	xmlns="http://xamarin.com/schemas/2014/forms"
-	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-	xmlns:local="clr-namespace:NavTabs"
-	x:Class="NavTabs.NavTabsPage">
-	<StackLayout Spacing="0">
-		<local:TabLayout
-			x:Name="tabLayout" />
-		<Grid VerticalOptions="FillAndExpand">
-			<ContentView
-				x:Name="view1"
-				BackgroundColor="Fuchsia"
-				VerticalOptions="FillAndExpand"
-				HorizontalOptions="FillAndExpand" />
-			<ContentView
-				x:Name="view2"
-				BackgroundColor="Lime"
-				IsVisible="false"
-				VerticalOptions="FillAndExpand"
-				HorizontalOptions="FillAndExpand" />
-		</Grid>
-	</StackLayout>
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:NavTabs"
+    x:Class="NavTabs.NavTabsPage">
+    <StackLayout Spacing="0">
+        <local:TabLayout
+            x:Name="tabLayout" />
+        <Grid VerticalOptions="FillAndExpand">
+            <ContentView
+                x:Name="view1"
+                BackgroundColor="Fuchsia"
+                VerticalOptions="FillAndExpand"
+                HorizontalOptions="FillAndExpand" />
+            <ContentView
+                x:Name="view2"
+                BackgroundColor="Lime"
+                IsVisible="false"
+                VerticalOptions="FillAndExpand"
+                HorizontalOptions="FillAndExpand" />
+        </Grid>
+    </StackLayout>
 </ContentPage>

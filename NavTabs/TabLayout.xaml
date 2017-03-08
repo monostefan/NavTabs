@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Grid
-	xmlns="http://xamarin.com/schemas/2014/forms"
-	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-	x:Class="NavTabs.TabLayout"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="NavTabs.TabLayout"
     RowSpacing="0"
     ColumnSpacing="0">
-	<Grid.RowDefinitions>
-	    <RowDefinition Height="42" />
-	    <RowDefinition Height="2" />
+    <Grid.RowDefinitions>
+        <RowDefinition Height="42" />
+        <RowDefinition Height="2" />
     </Grid.RowDefinitions>
 
-	<BoxView
-		x:Name="activeBox"
-		VerticalOptions="End"
-		Grid.Row="1"
-		Grid.Column="0" />
+    <BoxView
+        x:Name="activeBox"
+        VerticalOptions="End"
+        Grid.Row="1"
+        Grid.Column="0" />
 </Grid>
