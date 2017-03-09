@@ -2,7 +2,7 @@
 <Grid
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="NavTabs.TabLayout"
+    x:Class="NavTabs.TabsView"
     RowSpacing="0"
     ColumnSpacing="0">
     <Grid.RowDefinitions>

@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using System;
+using Xamarin.Forms;
 
 namespace NavTabs
 {
@@ -36,5 +37,15 @@ namespace NavTabs
             view1.IsVisible = tabId == 0;
             view2.IsVisible = tabId == 1;
         }
+
+		private void SetTabActive(object sender, EventArgs args)
+		{
+			tabLayout.IsActive = true;
+		}
+
+		private void SetTabInactive(object sender, EventArgs args)
+		{
+			tabLayout.IsActive = false;
+		}
     }
 }

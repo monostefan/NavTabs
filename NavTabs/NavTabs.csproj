@@ -30,7 +30,7 @@
   <ItemGroup>
     <EmbeddedResource Include="App.xaml" />
     <EmbeddedResource Include="NavTabsPage.xaml" />
-    <EmbeddedResource Include="TabLayout.xaml">
+    <EmbeddedResource Include="TabsView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
@@ -42,8 +42,8 @@
       <DependentUpon>NavTabsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TabLayout.xaml.cs">
-      <DependentUpon>TabLayout.xaml</DependentUpon>
+    <Compile Include="TabsView.xaml.cs">
+      <DependentUpon>TabsView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -5,27 +5,45 @@ using System.Linq;
 
 namespace NavTabs
 {
-    public partial class TabLayout : Grid
+    public partial class TabsView : Grid
     {
-        private static readonly Color inactiveColor = Color.FromHex("#001155");
-        private static readonly Color activeColor = Color.FromHex("#1781e3");
+		private static readonly Color activeColor = Color.FromHex("#001155");
+		private static readonly Color inactiveColor = Color.FromHex("#bbbbbb");
+		private static readonly Color currentTabColor = Color.FromHex("#1781e3");
 
         public event EventHandler<int> TabChanged;
 
         private readonly List<string> titles;
+
+		private Label currentTab;
+
+		private bool isActive = true;
+		public bool IsActive
+		{
+			get { return isActive; }
+			set
+			{
+				this.isActive = value;
+
+				foreach (var label in Children.OfType<Label>().Where(l => l != currentTab))
+				{
+					label.TextColor = isActive ? activeColor : inactiveColor;
+				}
+			}
+		}
 
         public IEnumerable<string> Titles
         {
             get { return titles; }
         }
 
-        public TabLayout()
+        public TabsView()
         {
             this.titles = new List<string>();
 
             InitializeComponent();
 
-            activeBox.BackgroundColor = activeColor;
+            activeBox.BackgroundColor = currentTabColor;
         }
 
         public void AddTab(string title)
@@ -38,7 +56,7 @@ namespace NavTabs
             {
                 Text = title,
                 FontSize = 17,
-                TextColor = column == 0 ? activeColor : inactiveColor,
+                TextColor = column == 0 ? currentTabColor : activeColor,
                 VerticalOptions = LayoutOptions.Fill,
                 VerticalTextAlignment = TextAlignment.Center,
                 HorizontalTextAlignment = TextAlignment.Center,
@@ -48,6 +66,9 @@ namespace NavTabs
             {
                 Command = new Command(() => OnTabSelected(column, tabLabel))
             });
+
+			if (currentTab == null)
+				currentTab = tabLabel;
 
             SetColumnSpan(seperator, titles.Count);
 
@@ -70,12 +91,17 @@ namespace NavTabs
 
         private void OnTabSelected(int column, Label selectedLabel)
         {
+			if (!IsActive)
+				return;
+
             foreach (var label in Children.OfType<Label>())
             {
-                label.TextColor = inactiveColor;
+                label.TextColor = activeColor;
             }
 
-            selectedLabel.TextColor = activeColor;
+			currentTab = selectedLabel;
+
+			currentTab.TextColor = currentTabColor;
 
             TabChanged?.Invoke(this, column);
 

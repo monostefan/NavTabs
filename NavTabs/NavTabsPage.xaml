@@ -5,17 +5,21 @@
     xmlns:local="clr-namespace:NavTabs"
     x:Class="NavTabs.NavTabsPage">
     <StackLayout Spacing="0">
-        <local:TabLayout
+		<StackLayout Orientation="Horizontal">
+			<Button Text="Active" Clicked="SetTabActive" />
+			<Button Text="Inactive" Clicked="SetTabInactive" />
+		</StackLayout>
+        <local:TabsView
             x:Name="tabLayout" />
         <Grid VerticalOptions="FillAndExpand">
             <ContentView
                 x:Name="view1"
-                BackgroundColor="#fdffff"
+                BackgroundColor="#ddffff"
                 VerticalOptions="FillAndExpand"
                 HorizontalOptions="FillAndExpand" />
             <ContentView
                 x:Name="view2"
-                BackgroundColor="#fffdff"
+                BackgroundColor="#ffddff"
                 IsVisible="false"
                 VerticalOptions="FillAndExpand"
                 HorizontalOptions="FillAndExpand" />
